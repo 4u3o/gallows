@@ -20,7 +20,7 @@ class Game
 
   def letters_to_guess
     @letters.map do |letter|
-      @user_guesses.include?(normalize_letter(letter)) ? letter : nil
+      letter if @user_guesses.include?(normalize_letter(letter))
     end
   end
 
