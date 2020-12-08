@@ -6,7 +6,7 @@ puts 'Всем привет!'
 begin
   word =
     File.readlines(
-      __dir__ + '/data/words.txt', encoding: 'UTF-8', chomp: true).sample
+      "#{__dir__}/data/words.txt", encoding: 'UTF-8', chomp: true).sample
 rescue SystemCallError => e
   puts "В директории #{__dir__} нет файла 'words.txt' \n#{e.message}"
   raise

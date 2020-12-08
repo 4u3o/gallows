@@ -17,7 +17,7 @@ bundle install
 ```
 Для начала игры ведите:
 ```
-ruby main.rb
+bundle exec ruby main.rb
 ```
 
 ## Как добавить в игру новые слова
