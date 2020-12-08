@@ -3,7 +3,15 @@ require_relative 'lib/game'
 
 puts 'Всем привет!'
 
-word = File.readlines(__dir__ + '/data/words.txt', encoding: 'UTF-8', chomp: true).sample
+begin
+  word =
+    File.readlines(
+      __dir__ + '/data/words.txt', encoding: 'UTF-8', chomp: true).sample
+rescue SystemCallError => e
+  puts "В директории #{__dir__} нет файла 'words.txt' \n#{e.message}"
+  raise
+end
+
 game = Game.new(word)
 console_interface = ConsoleInterface.new(game)
 
